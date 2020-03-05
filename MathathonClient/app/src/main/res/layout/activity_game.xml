@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nvandervoort.mathathon.GameActivity"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
+
+    <ProgressBar
+        android:id="@+id/game_progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:progressDrawable="@drawable/game_progress_bar"
+        android:minHeight="15dp"/>
+
+    <TextView
+        android:id="@+id/time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/time_left_placeholder"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/game_progress_bar"/>
+
+    <TextView
+        android:id="@+id/question_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_alignBaseline="@+id/time_left"
+        android:layout_alignBottom="@+id/time_left"
+        android:layout_alignParentStart="true"
+        android:hint="@string/question_num_placeholder"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:id="@+id/operands_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_left"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/first_operand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/first_operand"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:gravity="end"/>
+
+        <TextView
+            android:id="@+id/second_operand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/second_operand"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:gravity="end"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/operands_linear_layout"
+        android:layout_toStartOf="@id/operands_linear_layout"
+        android:layout_marginEnd="8dp"
+        android:textSize="35sp"
+        android:textColor="@android:color/black"
+        android:hint="@string/operator"/>
+
+    <ImageView
+        android:id="@+id/equals_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/simple_black_divider"
+        android:layout_below="@+id/operands_linear_layout"
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription"/>
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/equals_bar"
+        android:layout_alignEnd="@+id/operands_linear_layout"
+        android:layout_below="@+id/equals_bar"
+        android:hint="@string/answer"
+        android:inputType="number"
+        android:textSize="25sp"
+        android:textAlignment="textEnd"
+        android:focusableInTouchMode="true"/>
+
+    <LinearLayout
+        android:id="@+id/skip_submit_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_below="@id/answer"
+        android:layout_alignEnd="@id/equals_bar"
+        android:layout_marginTop="5dp"
+        style="?android:buttonBarStyle">
+
+        <Button
+            android:id="@+id/skip_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/transparent"
+            style="?android:buttonBarButtonStyle"
+            android:textSize="16sp"
+            android:text="@string/skip"/>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            style="?android:buttonBarButtonStyle"
+            android:text="@string/submit"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/awaiting_confirmation_spinkit"
+        style="@style/SpinKitView.Large.ChasingDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/answer"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/colorAccent"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/waiting_end_of_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/waiting_end_of_game"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/equals_bar"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

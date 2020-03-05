@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mathathon</string>
+    <string name="welcome">Welcome to Mathathon!</string>
+    <string name="enter_port_num">Please enter the IP address and port number of the game server you wish to join</string>
+    <string name="port">Port</string>
+    <string name="join">JOIN</string>
+    <string name="checking_port">Checking port…</string>
+    <string name="port_valid_dialog">Port valid, please join game</string>
+    <string name="port_invalid_dialog">Port invalid</string>
+    <string name="ip_addr">IP Address</string>
+    <string name="invalid_ip">Invalid IP address</string>
+    <string name="waiting_for_players">Waiting for players to join</string>
+    <string name="game_ready">Game ready, counting down…</string>
+    <string name="time_left_placeholder">6:00</string>
+    <string name="first_operand">256</string>
+    <string name="operator">÷</string>
+    <string name="second_operand">44</string>
+    <string name="answer">Answer</string>
+    <string name="submit">Submit</string>
+    <string name="skip">Skip</string>
+    <string name="question_num_placeholder">Question 1/10</string>
+    <string name="waiting_end_of_game">Waiting for other players to finish game</string>
+    <string name="zero_time">0:00</string>
+</resources>
